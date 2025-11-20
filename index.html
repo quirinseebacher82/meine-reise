@@ -1,97 +1,195 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Philippinen-Reise</title>
     <style>
+        /* Grundlegendes Styling für die Navigation */
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
         }
+
         header {
-            background: #005f73;
-            padding: 15px 20px;
+            background-color: #333;
             color: white;
+            padding: 10px 20px;
         }
+
+        h1 {
+            margin: 0;
+        }
+
         nav {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 10px;
+            justify-content: space-around;
+            align-items: center;
         }
+
         nav a {
-            color: white;
+            padding: 10px 15px;
             text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            padding: 70px 20px;
-            background: url('hero.jpg') center/cover no-repeat;
             color: white;
-            text-shadow: 0 0 5px black;
-            text-align: center;
         }
-        .content {
-            padding: 30px;
+
+        /* Das Dropdown-Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
-        .section-box {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-            margin-bottom: 25px;
+
+        /* Das Dropdown-Menü verstecken (nur sichtbar bei Hover) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Dropdown sichtbar machen bei Hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover a {
+            background-color: #ddd;
+        }
+
+        /* Hamburger-Menü für mobile Ansicht */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 30px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            margin-left: auto;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            nav {
+                display: block;
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px 0;
+                margin: 5px 0;
+            }
+
+            /* Dropdown-Menü für mobile Geräte */
+            .dropdown {
+                display: block;
+                position: relative;
+            }
+
+            .dropdown-content {
+                position: relative;
+                display: none;
+                width: 100%;
+                text-align: left;
+                box-shadow: none;
+            }
+
+            /* Wenn das Dropdown aktiv ist, anzeigen */
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+
+            /* Hamburger Menü für mobile Ansicht */
+            .menu-toggle {
+                display: block;
+            }
+
+            /* Wenn das Menü aktiv ist */
+            nav.active a {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Meine Philippinen-Reise 22.11 – 15.12</h1>
-        <nav>
-            <a href="index.html">Startseite</a>
-            <a href="ueber-mich.html">Über mich</a>
-            <a href="vorbereitung.html">Vorbereitung</a>
-            <a href="route.html">Route</a>
+
+<header>
+    <h1>Meine Philippinen-Reise 22.11 – 15.12</h1>
+    <nav>
+        <a href="index.html">Startseite</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="vorbereitung.html">Vorbereitung</a>
+        <a href="route.html">Route</a>
+
+        <!-- Blog mit Untermenü -->
+        <div class="dropdown">
             <a href="blog.html">Blog</a>
-            <a href="ziele.html">Ziele</a>
+            <div class="dropdown-content">
+                <a href="blog-beitrag1.html">Blog-Beitrag 1</a>
+                <a href="blog-beitrag2.html">Blog-Beitrag 2</a>
+                <a href="blog-beitrag3.html">Blog-Beitrag 3</a>
+                <a href="blog-archiv.html">Archiv</a>
+            </div>
+        </div>
+
+        <!-- Galerie mit Untermenü -->
+        <div class="dropdown">
             <a href="galerie.html">Galerie</a>
-            <a href="kosten.html">Kosten</a>
-            <a href="fazit.html">Fazit</a>
-            <a href="kontakt.html">Kontakt</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h2>Willkommen auf meinem Reiseblog</h2>
-        <p>Begleite mich vom Packen bis zum Rückflug – alles dokumentiert.</p>
-    </section>
-
-    <div class="content">
-        <div class="section-box">
-            <h3>🌴 Worum geht es?</h3>
-            <p>Ich dokumentiere hier meine gesamte Reise auf die Philippinen. Von den Vorbereitungen über jeden einzelnen Tag bis zum Rückflug und meinem abschließenden Fazit.</p>
+            <div class="dropdown-content">
+                <a href="galerie-bilder1.html">Bilder 1</a>
+                <a href="galerie-bilder2.html">Bilder 2</a>
+                <a href="galerie-videos.html">Videos</a>
+                <a href="galerie-erlebnisse.html">Erlebnisse</a>
+            </div>
         </div>
 
-        <div class="section-box">
-            <h3>📅 Reisezeitraum</h3>
-            <p><strong>22. November – 15. Dezember</strong> (24 Tage Abenteuer)</p>
-        </div>
+        <a href="ziele.html">Ziele</a>
+        <a href="kosten.html">Kosten</a>
+        <a href="fazit.html">Fazit</a>
+        <a href="kontakt.html">Kontakt</a>
 
-        <div class="section-box">
-            <h3>📘 Blog starten</h3>
-            <p>Hier geht's direkt zur Übersicht aller Tage:</p>
-            <p><a href="blog.html"><strong>→ Zum Reisetagebuch</strong></a></p>
-        </div>
+        <!-- Hamburger-Menü -->
+        <button class="menu-toggle">&#9776;</button>
+    </nav>
+</header>
 
-        <div class="section-box">
-            <h3>🗺️ Route</h3>
-            <p>Die geplante und tatsächliche Route findest du hier:</p>
-            <p><a href="route.html"><strong>→ Zur Route</strong></a></p>
-        </div>
-    </div>
+<!-- Optional: JavaScript für das Hamburger-Menü -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Hamburger-Menü für mobile Ansicht
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector("nav");
+
+        menuToggle.addEventListener("click", function() {
+            navLinks.classList.toggle("active");
+        });
+
+        // Dropdown-Menü für mobile Ansicht
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', function() {
+                dropdown.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
+
+
