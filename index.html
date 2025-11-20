@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philippinen-Reise</title>
+    <title>Meine Philippinen-Reise</title>
     <style>
         /* Grundlegendes Styling für die Navigation */
         body {
@@ -84,29 +84,31 @@
 
         /* Responsive Design */
         @media screen and (max-width: 768px) {
+            /* Navigation auf mobilen Geräten */
             nav {
-                display: block;
+                display: none; /* Standardmäßig das Menü ausblenden */
+                flex-direction: column;
                 text-align: center;
-            }
-
-            nav a {
-                display: block;
-                padding: 10px 0;
-                margin: 5px 0;
+                width: 100%;
+                background-color: #333;
+                position: absolute;
+                top: 60px; /* Position unter dem Header */
+                left: 0;
+                right: 0;
+                z-index: 1;
             }
 
             /* Dropdown-Menü für mobile Geräte */
             .dropdown {
                 display: block;
-                position: relative;
+                width: 100%;
             }
 
             .dropdown-content {
-                position: relative;
-                display: none;
+                display: none; /* Verstecke das Dropdown-Menü standardmäßig */
                 width: 100%;
-                text-align: left;
                 box-shadow: none;
+                text-align: left;
             }
 
             /* Wenn das Dropdown aktiv ist, anzeigen */
@@ -116,12 +118,24 @@
 
             /* Hamburger Menü für mobile Ansicht */
             .menu-toggle {
+                display: block; /* Zeige das Hamburger-Menü */
+            }
+
+            /* Menü sichtbar machen, wenn es aktiv ist */
+            nav.active {
                 display: block;
             }
 
-            /* Wenn das Menü aktiv ist */
-            nav.active a {
+            nav a {
                 display: block;
+                padding: 10px;
+                margin: 5px 0;
+                background-color: #333;
+                color: white;
+            }
+
+            nav a:hover {
+                background-color: #444;
             }
         }
     </style>
@@ -129,8 +143,8 @@
 <body>
 
 <header>
-    <h1>Philippinen-Reise 22.11 – 15.12.2025</h1>
-<nav>
+    <h1>Meine Philippinen-Reise 22.11 – 15.12</h1>
+    <nav>
         <a href="index.html">Startseite</a>
         <a href="ueber-mich.html">Über mich</a>
         <a href="vorbereitung.html">Vorbereitung</a>
@@ -169,15 +183,16 @@
         <div class="dropdown">
             <a href="galerie.html">Galerie</a>
             <div class="dropdown-content">
-                <a href="Staende.html">Strände</a>
-                <a href="Berge.html">Berge</a>
+                <a href="galerie-bilder1.html">Bilder 1</a>
+                <a href="galerie-bilder2.html">Bilder 2</a>
+                <a href="galerie-videos.html">Videos</a>
                 <a href="galerie-erlebnisse.html">Erlebnisse</a>
             </div>
         </div>
 
-        <a href="essen.html">Essen</a>
-        <a href="fazit.html">Fazit</a>
+        <a href="ziele.html">Ziele</a>
         <a href="kosten.html">Kosten</a>
+        <a href="fazit.html">Fazit</a>
         <a href="kontakt.html">Kontakt</a>
 
         <!-- Hamburger-Menü -->
@@ -208,6 +223,8 @@
 
 </body>
 </html>
+
+
 
 
 
